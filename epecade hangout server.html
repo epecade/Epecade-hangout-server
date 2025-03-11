@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epicade's Hangout Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Fullscreen Background */
+        body {
+            background: linear-gradient(to right, rgba(20, 20, 40, 0.9), rgba(40, 20, 60, 0.9)), 
+                        url('https://cdn.discordapp.com/attachments/1344539769211977758/1348888230451216404/converted_image_4.png?ex=67d1198f&is=67cfc80f&hm=5725909a747f25f41bb020fd581e86714ebd621e01dc7354a7ad11f44c62adb6&') no-repeat center/cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Glassmorphic Effect */
+        .container {
+            width: 90%;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+        }
+
+        /* Server Logo */
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+            margin-bottom: 15px;
+        }
+
+        /* Title */
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        /* Features Title */
+        .features {
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
+            letter-spacing: 1px;
+        }
+
+        /* Feature Items */
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .list-item {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            width: 45%;
+            text-align: center;
+        }
+
+        .list-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Rules Box */
+        .rules {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .rules h2 {
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
+            margin-bottom: 10px;
+        }
+
+        .rules ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rules li {
+            font-size: 18px;
+            padding: 8px 0;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+        }
+
+        .rules li::before {
+            content: "⚡";
+            margin-right: 8px;
+        }
+
+        /* Join Button */
+        .join-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(90deg, rgba(255, 0, 100, 0.8), rgba(255, 100, 0, 0.8));
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0px 8px 15px rgba(255, 100, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .join-btn:hover {
+            background: linear-gradient(90deg, rgba(255, 100, 0, 0.9), rgba(255, 0, 100, 0.9));
+            box-shadow: 0px 10px 20px rgba(255, 0, 100, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Fixes */
+        @media screen and (max-width: 768px) {
+            .list-item {
+                width: 100%;
+            }
+            .container {
+                padding: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="https://cdn.discordapp.com/attachments/1344539684553887806/1348885137101946880/converted_image.png?ex=67d116ad&is=67cfc52d&hm=16b774ff1a44b2b413e90d60d7077fb2cd6c13abe03de865a572b34cc1429924&" alt="Server Logo" class="logo">
+            <h1>Epicade's Hangout Server</h1>
+        </header>
+
+        <div class="features">✨ What Awaits You ✨</div>
+        <div class="list">
+            <div class="list-item">💬 Chill chats & fun memes</div>
+            <div class="list-item">📺 Anime discussions & recommendations</div>
+            <div class="list-item">🎮 Gaming events & party invites</div>
+            <div class="list-item">🎵 Music sharing & karaoke nights</div>
+            <div class="list-item">🍿 Movie nights & watch parties</div>
+        </div>
+
+        <div class="rules">
+            <h2>🚨 Server Rules 🚨</h2>
+            <ul>
+                <li>No toxicity or hate speech.</li>
+                <li>Respect all members.</li>
+                <li>No spamming or self-promotion.</li>
+                <li>Keep content SFW.</li>
+                <li>Follow Discord’s TOS.</li>
+            </ul>
+        </div>
+
+        <a href="https://discord.gg/UnPeHgYpdN" class="join-btn">💖 Join Now 💖</a>
+    </div>
+
+</body>
+</html>
